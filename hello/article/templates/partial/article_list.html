@@ -16,8 +16,12 @@
         </p>
 
         <p>
-            <a href="{% url 'accounts:user-detail' article.author_id %}">{{ article.author }}</a>
-            | {{ article.created_at|date:"d.m.Y H:i:s" }}
+            {% if article.author %}
+                <a href="{% url 'accounts:user-detail' article.author_id %}">{{ article.author }}</a>
+            {% else %}
+                <span>Автор неизвестен</span>
+            {% endif %}
+                | {{ article.created_at|date:"d.m.Y H:i:s" }}
         </p>
     </div>
 
@@ -27,5 +31,5 @@
 
 
 {% if is_paginated %}
-     {% include 'partial/pagination.html' %}
+     {% include 'partial/paginate.html' %}
 {% endif %}
