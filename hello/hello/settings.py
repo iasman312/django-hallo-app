@@ -14,7 +14,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv()  # Загрузка переменных окружения
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     # Custom apps
     'article',
     'accounts',
-    'notes',
     'api_v1',
 
     # Lib apps
@@ -88,7 +87,7 @@ WSGI_APPLICATION = 'hello.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Драйвер для работы с PostgreSQL
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
@@ -142,6 +141,6 @@ MEDIA_URL = 'uploads/'
 
 
 try:
-    from hello.local_settings import *
+    from hello.local_settings import *  # Импорт локальных настроек. Используется, как правило, для среды разработки
 except ModuleNotFoundError:
     print('local_settings does not exists')
