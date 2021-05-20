@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     # Custom apps
     'article',
     'accounts',
+    'notes',
+    'api_v1',
 
     # Lib apps
 ]
@@ -142,4 +144,4 @@ MEDIA_URL = 'uploads/'
 try:
     from hello.local_settings import *
 except ModuleNotFoundError:
-    pass
+    print('local_settings does not exists')
