@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'api_v1',
 
     # Lib apps
+    'rest_framework',
 ]
 
 
