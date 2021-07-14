@@ -75,24 +75,12 @@ DATABASES = {
 
 ___важно соблюдать очерёдность выполнения команд___
 
-Теги:
-```bash
-./manage.py loaddata fixtures/tags.json
-```
 
-Группы:
 ```bash
-./manage.py loaddata fixtures/groups.json
+./manage.py loaddata fixtures/auth.json
 ```
-
-Пользователи
 ```bash
-./manage.py loaddata fixtures/users.json
-```
-
-Статьи
-```bash
-./manage.py loaddata fixtures/articles.json
+./manage.py loaddata fixtures/dump.json
 ```
 
 ___
@@ -105,15 +93,18 @@ ___
 ```
 
 ___
+###### Переменное окружение
+
+Добавил пример заполнения env файла:
+SECRET_KEY=django-insecure-$bw-@604nr@!ljl##b*v+0!aahu-bw^k0+zp1--0l&g2@*lu5j
+ALLOWED_HOSTS=*
+DB_HOST=localhost
+DB_PORT=5432
+
+___
 ###### Доступ
 
 Для доступа в панель администратора перейдите по ссылке http://localhost:8000/admin
 
 
 Username для администратора из фикстур: `admin`, пароль: `admin` (пользователь иммет доступ к панели администратора)
-
-Username для автора из фикстур: `author`, пароль: `author`
-
-Username для модератора из фикстур: `moderator`, пароль: `moderator`
-
-Username для пользователя из фикстур: `user`, пароль: `user`
